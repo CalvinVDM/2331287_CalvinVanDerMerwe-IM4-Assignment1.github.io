@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Test</title>
+</head>
+<style>
+    h1{
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(181, 0, 24);
+    }
+    body{
+        margin:50px;
+    }
+    #container{
+        margin: 0px auto;
+        width: 500px;
+        height: 375px;
+        border: 10px rgb(177, 6, 14) solid;
+    }
+    #videoElement{
+        width: 500px;
+        height: 375px;
+        background-color: black;
+    }
+</style>
+<body>
+    <h1>The Government Of Panoptica</h1>
+    <div id="container">
+        <video autoplay = "true" id="videoElement">
+
+        </video>
+    </div>
+
+    <script>
+        let video= document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video:true})
+            .then(function(stream) {
+            video.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.log("Something went wrong!");
+                })
+        } else {
+                console.log("getUserMedia not supported!")
+            }
+            document.write("Hello World!")
+    
+    alert ("Smile.");
+    </script>
+    </head>
+    <body>
+        <form>
+            <input type = "button" value=click me onclick= "alert ();"/>
+        </form>
+        
+    </script>
+</body>
+</html>
